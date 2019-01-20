@@ -1,18 +1,28 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="flex items-center">
+    <div class="md:w-1/2 md:mx-auto">
+      <gif-gif :data-votes="votes"></gif-gif>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import GifGif from '@/components/GifGif.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    GifGif
+  },
+  data() {
+    return {
+      votes: [
+        { picked: 'git', reason: 'Reason...', name: 'Jack' },
+        { picked: 'gif', reason: 'Reason...', name: 'David' },
+        { picked: 'git', reason: 'Reason...', name: 'Mary' },
+      ],
+    }
   }
 }
 </script>
